@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>D&D Char</h1>
+<div id="str"></div>
+<div id="dex"></div>
+<div id="con"></div> 
+<div id="int"></div>
+<div id="wis"></div>
+<div id="cha"></div>
+
+<body>
+
+</body>
+<script>
+function rollDice() {
+        let dobbelsteen = Math.ceil(Math.random() *6);
+        return dobbelsteen;
+}
+function rollStat(){
+    let d1 = rollDice();
+    let d2 = rollDice();
+    let d3 = rollDice();
+    let d4 = rollDice();
+    console.log(d1, d2, d3, d4);
+    let lowest = Math.min(d1, d2, d3, d4);
+    let sum = d1+d2+d3+d4 - lowest;
+    return sum;
+}
+let strE1 = document.getElementById("str");
+let strStat = rollStat();
+strE1.innerText = "STR: " + strStat;
+
+let dexE1 = document.getElementById("dex");
+let dexStat = rollStat();
+dexE1.innerText = "DEX: " + dexStat;
+
+let conE1 = document.getElementById("con");
+let conStat = rollStat();
+conE1.innerText = "CON: " + conStat;
+
+
+let intE1 = document.getElementById("int");
+let intStat = rollStat();
+intE1.innerText = "INT: " + intStat;
+
+let wisE1 = document.getElementById("wis");
+let wisStat = rollStat();
+wisE1.innerText = "WIS: " + wisStat;
+
+let chaE1 = document.getElementById("cha");
+let chaStat = rollStat();
+chaE1.innerText = "CHA: " + chaStat;
+
+</script>
+</html>
